@@ -1,0 +1,50 @@
+// Colors 
+$color-primary: #ffb74d;
+$color-primary-dark: #ff851e;
+$color-primary-light: #ffe0b3;
+$color-secondary: #2d3037;
+$color-gray: #777;
+$color-gray-dark: #999;
+$color-white: #ffff;
+$color-black: #000000; 
+$color-gray-light-1: #f7f7f7; 
+$color-dark: #222222;
+$color-green: #55c57a;
+
+
+// gradiant-Colors 
+$grad-executive: linear-gradient(
+  to right bottom,
+  #d6d3ce,
+  #9a9690,
+  #5c5955
+);
+
+$grad-luxury: linear-gradient(
+  to right bottom,
+  #ffd08a,
+  #ffb74d,
+  #ff9801
+); 
+
+$grad-elite: linear-gradient(
+  to right bottom,
+  #55555a,
+  #242428,
+  #0b0b0d
+);
+
+//Fonts 
+$default-font-size: 1.6rem; 
+
+// Grid 
+$grid-width: 114rem; 
+$gutter-vertical: 8rem; 
+$gutter-horizontal: 6rem; 
+
+
+// Grid for comments 
+
+$grid-width--comments: 160rem; 
+$gutter-vertical--comments: 8rem; 
+$gutter-horizontal--comments: 4rem;
