@@ -1,0 +1,63 @@
+.composition {
+  position: relative;
+
+  @include respond(phone) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__photo {
+    position: absolute;
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+    border-radius: 5px;
+    height: 250px;
+
+    &--1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--2 {
+      right: -1rem;
+      top: 2rem;
+    }
+
+    &--3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    @include respond(phone) {
+      position: relative;
+      flex: 1;
+      min-width: 0;
+      width: 0;
+      height: 18rem;
+      object-fit: cover;
+      top: auto;
+      left: auto;
+      right: auto;
+
+      &--2 {
+        transform: translateY(-2rem);
+      }
+    }
+
+    transition: all 0.2s;
+    &:hover {
+      outline: 1.5rem solid rgba($color-white, 0.1);
+      transform: scale(1.1) translateY(-0.5rem);
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+      z-index: 1;
+      border-radius: 0px;
+      padding: 2rem;
+      
+    }
+  }
+
+  &:hover &:__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+}
