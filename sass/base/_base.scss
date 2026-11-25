@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  /* حطينا نص عشان لو اليوزر عامل ديفولت بالبراوزر غير 16 بكسل هيك حتى لو كانت قيمة تانية هيتغير المحتوى بشكل يناسب القيمة المحطوطة */
+  // defines what 1rem is
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 62.5%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 40%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  /* البوكس سايزنج كنت قادر احطها بال unviersal tag بس عملت هيك عشان اوثق اني تعلمت inhertant property */
+  box-sizing: border-box;
+  padding: 0;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
+  @include respond(phone) {
+    padding: 0;
+  }
+}
