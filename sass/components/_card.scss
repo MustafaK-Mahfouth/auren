@@ -1,0 +1,286 @@
+.card {
+  position: relative;
+  height: 50rem;
+  perspective: 150rem;
+  -moz-animation: 150rem; // i used this function to make prespective works on firefox browser
+
+  @include respond(phone) {
+    height: auto;
+  }
+
+  &__p {
+    margin-left: 2.5rem;
+    color: $color-white;
+
+    &--description {
+      margin-top: 5rem;
+      font-size: 2rem;
+    }
+
+    &--From {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: $color-gray;
+      width: 300px;
+      margin-bottom: 0px;
+    }
+
+    &--Value {
+      margin-bottom: 0;
+      display: inline-block;
+      font-size: 6rem;
+      color: $color-primary-dark;
+      font-weight: 700;
+      width: auto;
+    }
+
+    &--day {
+      display: inline-block;
+      color: $color-white;
+      font-size: 2.5rem;
+      margin: 0px;
+    }
+
+    &--minimum {
+      color: $color-gray;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__heading--back {
+    display: inline-block;
+    margin-left: 2.5rem;
+    margin-top: 6rem;
+
+    &--span {
+      font-size: 3rem;
+      padding: 1rem 1.5rem;
+      border-bottom: 2px solid $color-primary-dark;
+    }
+
+    &--btn {
+      width: 18rem;
+      &.btn:link,
+      &.btn:visited {
+        position: absolute;
+        bottom: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__side {
+    position: absolute;
+    height: 50rem;
+    transition: all 0.8s ease;
+    color: $color-white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.2rem;
+    box-shadow: 0 2.5rem 4rem rgba($color-black, 0.45);
+    overflow: hidden;
+
+    &--front {
+      background-color: #222222;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-color: $color-dark;
+      }
+
+      &-2 {
+        background-color: $color-dark;
+      }
+
+      &-3 {
+        background-color: $color-dark;
+      }
+    }
+
+    @include respond(phone) {
+      position: relative;
+      height: auto;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  } 
+
+  @include respond(phone) {
+    &__side--back {
+      transform: none;
+    }
+
+    &:hover &__side--front,
+    &:hover &__side--back {
+      transform: none;
+    }
+  }
+
+  &__heading {
+    display: inline-block;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: $color-white;
+    position: absolute;
+    text-align: left;
+    top: 14rem;
+    left: 2rem;
+    width: 80%;
+    text-transform: uppercase;
+  }
+
+  &__heading__span {
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid $color-primary-dark;
+  }
+
+  &__picture {
+    height: 23rem;
+    background-size: cover;
+    margin-bottom: 2.5rem;
+
+    &-1 {
+      background-image:
+        linear-gradient(
+          to right,
+          $color-dark 0%,
+          $color-dark 25%,
+          // مخفية بالكامل لحد نص الكارد
+          rgba(34, 34, 34, 0.7) 65%,
+          rgba(34, 34, 34, 0.3) 85%,
+          transparent 100%
+        ),
+        url(/img/cardsCars1-Photoroom.jpg);
+
+      background-size: cover;
+      background-position: right;
+    }
+
+    &-2 {
+      background-image:
+        linear-gradient(
+          to right,
+          $color-dark 0%,
+          $color-dark 25%,
+          // مخفية بالكامل لحد نص الكارد
+          rgba(34, 34, 34, 0.7) 65%,
+          rgba(34, 34, 34, 0.3) 85%,
+          transparent 100%
+        ),
+        url(/img/cardsCars2-Photoroom.jpg);
+
+      background-size: cover;
+      background-position: right;
+    }
+    &-3 {
+      background-image:
+        linear-gradient(
+          to right,
+          $color-dark 0%,
+          $color-dark 25%,
+          // مخفية بالكامل لحد نص الكارد
+          rgba(34, 34, 34, 0.7) 65%,
+          rgba(34, 34, 34, 0.3) 85%,
+          transparent 100%
+        ),
+        url(/img/cardsCars3-Photoroom.jpg);
+
+      background-size: cover;
+      background-position: right;
+    }
+  }
+  &__details {
+    ul {
+      margin-top: -1rem;
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      text-align: left;
+
+      li {
+        color: $color-white;
+
+        margin: 1rem;
+        font-size: 1.6rem;
+
+        &:not(:last-child) {
+          // border-bottom: 1px solid $color-white;
+        }
+
+        svg {
+          stroke: $color-primary-dark;
+          margin-right: 1rem;
+          display: inline-block;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+
+  @include respond(phone) {
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background-color: $color-dark;
+    box-shadow: 0 2.5rem 4rem rgba($color-black, 0.45);
+
+    &__side {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    &__side--front {
+      padding-bottom: 3rem;
+    }
+
+    &__side--back {
+      padding: 3rem;
+      border-top: 1px solid rgba($color-white, 0.15);
+    }
+
+    &__heading--back,
+    &__heading--back--span {
+      display: none;
+    }
+
+    &__p {
+      margin-left: 0;
+    }
+
+    &__p--description {
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+
+    &__p--From {
+      display: block;
+      width: auto;
+    }
+
+    &__p--minimum {
+      margin-bottom: 3rem;
+    }
+
+    &__heading--back--btn.btn:link,
+    &__heading--back--btn.btn:visited {
+      position: relative;
+      display: block;
+      width: 100%;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      text-align: center;
+    }
+  }
+}
